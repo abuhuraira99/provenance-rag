@@ -1,0 +1,489 @@
+{
+  "mode": "in-process",
+  "backend": "openai",
+  "label": "openai",
+  "stub": false,
+  "device": {
+    "backend": "openai",
+    "python": "3.14.7",
+    "endpoint_model": "Qwen3.8-27B",
+    "stub": false
+  },
+  "model_load_s": 0.07,
+  "index": {
+    "corpus": "mc3-corpus",
+    "files": 13,
+    "chunks": 28,
+    "ocr_done": 2,
+    "ocr_pending": 0,
+    "seconds": 18.31
+  },
+  "index_s": 18.31,
+  "inventory": [
+    {
+      "path": "engineering/ingest_service.py",
+      "type": "py",
+      "size": 543,
+      "status": "indexed",
+      "detail": "",
+      "title": "Ingest service for Orrery Systems telemetry batches.",
+      "blocks": 15,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "engineering/meridian_release_notes.txt",
+      "type": "txt",
+      "size": 390,
+      "status": "indexed",
+      "detail": "",
+      "title": "Meridian firmware — release notes",
+      "blocks": 6,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "logs/prod_inference_2026-09-02.log",
+      "type": "log",
+      "size": 735,
+      "status": "indexed",
+      "detail": "",
+      "title": "2026-09-02T03:11:04Z inference-node-07 meridian[2211]: INFO  scheduler: batch 88213 accepted, 64 requests",
+      "blocks": 7,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "planning/roadmap_fy27.docx",
+      "type": "docx",
+      "size": 36980,
+      "status": "indexed",
+      "detail": "",
+      "title": "Orrery Systems — Accelerator Roadmap (Internal)",
+      "blocks": 8,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "specs/backplane_pinout.png",
+      "type": "png",
+      "size": 25383,
+      "status": "indexed",
+      "detail": "ocr: 361 chars",
+      "title": "",
+      "blocks": 0,
+      "ocr_jobs": 1,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "specs/tq40_datasheet_r1_WITHDRAWN.pdf",
+      "type": "pdf",
+      "size": 2333,
+      "status": "indexed",
+      "detail": "",
+      "title": "Orrery Systems TQ-40 \"Sable\" Accelerator",
+      "blocks": 3,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "withdrawn",
+        "reason": "filename marked WITHDRAWN",
+        "superseded_by": "specs/tq40_datasheet_r2.pdf"
+      }
+    },
+    {
+      "path": "specs/tq40_datasheet_r2.pdf",
+      "type": "pdf",
+      "size": 3310,
+      "status": "indexed",
+      "detail": "",
+      "title": "Orrery Systems TQ-40 \"Sable\" Accelerator",
+      "blocks": 4,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "support/asset_label.jpg",
+      "type": "jpg",
+      "size": 34340,
+      "status": "indexed",
+      "detail": "ocr: 151 chars",
+      "title": "",
+      "blocks": 0,
+      "ocr_jobs": 1,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "support/bug_database.csv",
+      "type": "csv",
+      "size": 445,
+      "status": "indexed",
+      "detail": "",
+      "title": "ticket,component,severity,summary,status,fixed_in",
+      "blocks": 6,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "support/rma_parts.xlsx",
+      "type": "xlsx",
+      "size": 5649,
+      "status": "indexed",
+      "detail": "",
+      "title": "workbook sheets: RMA Parts, Notes",
+      "blocks": 6,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "vendor/internal_audit.txt",
+      "type": "txt",
+      "size": 110,
+      "status": "indexed",
+      "detail": "",
+      "title": "Internal audit findings, restricted distribution.",
+      "blocks": 2,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "vendor/supplier_agreement_ENCRYPTED.pdf",
+      "type": "pdf",
+      "size": 2050,
+      "status": "skipped-encrypted",
+      "detail": "PDF has an /Encrypt dictionary",
+      "title": "",
+      "blocks": 0,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    },
+    {
+      "path": "vendor/telemetry_capture.dat",
+      "type": "dat",
+      "size": 16384,
+      "status": "skipped-unknown-type",
+      "detail": "no parser for '.dat'",
+      "title": "",
+      "blocks": 0,
+      "ocr_jobs": 0,
+      "revision": {
+        "status": "current",
+        "reason": "",
+        "superseded_by": ""
+      }
+    }
+  ],
+  "items": [
+    {
+      "n": 1,
+      "id": "query_01",
+      "query": "What is the maximum junction temperature of the TQ-40?",
+      "category": "pdf, superseded-document trap",
+      "expected_answer": "94",
+      "expected_citations": [
+        "specs/tq40_datasheet_r2.pdf"
+      ],
+      "got_answer": "94",
+      "got_citations": [
+        "specs/tq40_datasheet_r2.pdf"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 4563,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"94 C\", \"sources\": [1]}",
+        "answer passage [1] specs/tq40_datasheet_r2.pdf (page 1)"
+      ]
+    },
+    {
+      "n": 2,
+      "id": "query_02",
+      "query": "In which quarter does the TQ-60 enter customer sampling?",
+      "category": "docx, single-hop",
+      "expected_answer": "Q3 FY27",
+      "expected_citations": [
+        "planning/roadmap_fy27.docx"
+      ],
+      "got_answer": "Q3 FY27",
+      "got_citations": [
+        "planning/roadmap_fy27.docx"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3309,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"Q3 FY27\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] planning/roadmap_fy27.docx (paragraph 5 - paragraph 6)"
+      ]
+    },
+    {
+      "n": 3,
+      "id": "query_03",
+      "query": "What is the part number of the field-replaceable fan assembly for the TQ-40?",
+      "category": "xlsx, single-hop",
+      "expected_answer": "ORR-FAN-2214-B",
+      "expected_citations": [
+        "support/rma_parts.xlsx"
+      ],
+      "got_answer": "ORR-FAN-2214-B",
+      "got_citations": [
+        "support/rma_parts.xlsx"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 4482,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"ORR-FAN-2214-B\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] support/rma_parts.xlsx (sheet 'RMA Parts' row 2)"
+      ]
+    },
+    {
+      "n": 4,
+      "id": "query_04",
+      "query": "Which firmware version fixed ticket ORR-1847?",
+      "category": "csv, single-hop",
+      "expected_answer": "4.3.2",
+      "expected_citations": [
+        "support/bug_database.csv"
+      ],
+      "got_answer": "4.3.2",
+      "got_citations": [
+        "support/bug_database.csv"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 2726,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"4.3.2\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] support/bug_database.csv (row 2)"
+      ]
+    },
+    {
+      "n": 5,
+      "id": "query_05",
+      "query": "What error code is logged when the thermal throttle engages?",
+      "category": "text log, single-hop",
+      "expected_answer": "E7731",
+      "expected_citations": [
+        "logs/prod_inference_2026-09-02.log"
+      ],
+      "got_answer": "E7731",
+      "got_citations": [
+        "logs/prod_inference_2026-09-02.log"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3059,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "hop 1: ORR-1847 -> support/bug_database.csv",
+        "model reply: {\"answer\": \"E7731\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] logs/prod_inference_2026-09-02.log (lines 1-7)"
+      ]
+    },
+    {
+      "n": 6,
+      "id": "query_06",
+      "query": "What is the default batch timeout, in seconds, in the ingest service?",
+      "category": "python source, single-hop",
+      "expected_answer": "180",
+      "expected_citations": [
+        "engineering/ingest_service.py"
+      ],
+      "got_answer": "180",
+      "got_citations": [
+        "engineering/ingest_service.py"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3743,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"180\", \"sources\": [1, 3], \"needs\": []}",
+        "answer passage [1] engineering/ingest_service.py (lines 1-15)"
+      ]
+    },
+    {
+      "n": 7,
+      "id": "query_07",
+      "query": "Which backplane pin carries THERM_ALERT# on the TQ-40?",
+      "category": "png, multimodal — unanswerable without vision",
+      "expected_answer": "B14",
+      "expected_citations": [
+        "specs/backplane_pinout.png"
+      ],
+      "got_answer": "B14",
+      "got_citations": [
+        "specs/backplane_pinout.png"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3271,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"B14\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] specs/backplane_pinout.png (image)"
+      ]
+    },
+    {
+      "n": 8,
+      "id": "query_08",
+      "query": "What board revision is printed on the asset label?",
+      "category": "jpg, multimodal — unanswerable without vision",
+      "expected_answer": "REV-C2",
+      "expected_citations": [
+        "support/asset_label.jpg"
+      ],
+      "got_answer": "REV-C2",
+      "got_citations": [
+        "support/asset_label.jpg"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3490,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"REV-C2\", \"sources\": [1], \"needs\": []}",
+        "answer passage [1] support/asset_label.jpg (image)"
+      ]
+    },
+    {
+      "n": 9,
+      "id": "query_09",
+      "query": "The production log shows a thermal throttle incident. Which firmware release fixed the underlying defect?",
+      "category": "multi-hop, two citations required",
+      "expected_answer": "4.3.2",
+      "expected_citations": [
+        "logs/prod_inference_2026-09-02.log",
+        "support/bug_database.csv"
+      ],
+      "got_answer": "4.3.2",
+      "got_citations": [
+        "support/bug_database.csv",
+        "logs/prod_inference_2026-09-02.log"
+      ],
+      "confidence": 0.9,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3211,
+      "mode": "llm",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\n  \"answer\": \"4.3.2\",\n  \"sources\": [\n    1,\n    10\n  ],\n  \"needs\": []\n}",
+        "answer passage [10] support/bug_database.csv (row 2)"
+      ]
+    },
+    {
+      "n": 10,
+      "id": "query_10",
+      "query": "What is the unit price of the TQ-40 at 10,000 unit volume?",
+      "category": "refusal — the answer exists only in the ENCRYPTED file",
+      "expected_answer": "",
+      "expected_citations": [],
+      "got_answer": "",
+      "got_citations": [],
+      "confidence": 0.0,
+      "answer_ok": true,
+      "citations_ok": true,
+      "pass": true,
+      "latency_ms": 3531,
+      "mode": "refused",
+      "trace": [
+        "excluded withdrawn: ['specs/tq40_datasheet_r1_WITHDRAWN.pdf']",
+        "model reply: {\"answer\": \"\", \"sources\": [], \"needs\": []}",
+        "model refused"
+      ]
+    }
+  ],
+  "name": "tokenlab-qwen3.8-27b",
+  "created": "2026-11-08T15:37:27+0500",
+  "questions_file": "sample-questions.json",
+  "corpus": "mc3-corpus",
+  "model_label": "Qwen3.8-27B via AMD Token Lab (OpenAI-compatible endpoint), thinking disabled",
+  "host": "local",
+  "python": "3.14.7",
+  "wall_s": 54.3,
+  "summary": {
+    "passed": 10,
+    "total": 10,
+    "points": 200,
+    "max_points": 200,
+    "answer_ok": 10,
+    "citations_ok": 10,
+    "latency_ms_mean": 3538,
+    "latency_ms_max": 4563,
+    "latency_ms_p95": 4563
+  }
+}

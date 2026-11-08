@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Runtime artefacts
+/index/
+/output/
+/models/
+*.tmp
+
+# Organiser material is read by path, never committed
+/corpus/
+mc3-corpus/
+mc3-starter-kit/
+sample-questions.json
+
+# Secrets
+.env
+.env.*
+*.env
+.secrets/
+
+# Local logs
+reports/.*.log
+*.log
+!tests/**/*.log
+
+# uv project artefacts
+uv.lock

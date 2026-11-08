@@ -1,0 +1,88 @@
+# Image manifest for the crane-based build pipeline. It mirrors the reference
+# Dockerfile in this folder:
+#   /app/app.py, /app/server.py, /app/requirements.txt, empty /app/corpus,
+#   /app/output and /app/index; the provenance_rag package on the import path;
+#   extra wheels from requirements-image.txt installed --no-deps;
+#   CMD python3 /app/server.py, WORKDIR /app.
+# The pipeline sets PYTHONPATH=/opt/site, so the package goes to
+# /opt/site/provenance_rag instead of /app/provenance_rag. app/server.py,
+# app/app.py (rules fallback) and the supervisor (`python -m provenance_rag.server`)
+# all import it from sys.path.
+schema = 1
+name = "provenance-rag"
+
+[image]
+app_dir = "app"                          # -> /app (app.py, server.py)
+package_dirs = ["provenance_rag"]        # -> /opt/site/provenance_rag
+requirements = "requirements-image.txt"
+copy_requirements = true                 # -> /app/requirements.txt, as in the Dockerfile
+# /app/corpus and /app/index ship empty; the harness copies the corpus in and
+# `--index` writes the index before any graded clock.
+extra_dirs = ["corpus", "output", "index"]
+cmd = ["python3", "/app/server.py"]
+
+[image.env]
+PYTHONDONTWRITEBYTECODE = "1"
+PRAG_BACKEND = "transformers"
+PRAG_INDEX_DIR = "/app/index"
+PRAG_OUTPUT_DIR = "/app/output"
+PRAG_SOCKET = "/tmp/provenance_rag.sock"
+
+# Identical in all three projects (shared weights layers).
+[model]
+repo_id = "Qwen/Qwen3-VL-8B-Instruct"
+revision = "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+name = "Qwen3-VL-8B-Instruct"
+allow_patterns = ["*.json", "*.safetensors", "*.txt", "*.jinja", "*.model", "*.tiktoken"]
+
+# CPU contract test. PRAG_BACKEND=stub selects provenance_rag.backends.stub
+# (standard library only, no torch).
+[smoke]
+server = ["python3", "/app/server.py"]
+ready_socket = "/tmp/provenance_rag.sock"
+ready_timeout = 60
+
+[smoke.env]
+PRAG_BACKEND = "stub"
+
+# {corpus} is /app/corpus, pre-filled by the smoke test with three text files,
+# an empty directory, an unknown binary and a broken PDF.
+[[smoke.setup]]
+name = "index"
+args = ["python3", "/app/app.py", "--index", "{corpus}"]
+timeout = 600
+
+[[smoke.case]]
+name = "query_01"
+args = ["python3", "/app/app.py", "--corpus", "{corpus}", "--query-id", "query_01",
+        "--query", "Per the TQ40 datasheet, how hot may the junction get?"]
+output = "/app/output/query_01_output.json"
+keys = { answer = "str", citations = "list", confidence = "number" }
+
+[[smoke.case]]
+name = "refusal"
+args = ["python3", "/app/app.py", "--corpus", "{corpus}", "--query-id", "query_02",
+        "--query", "Who founded the company that makes the TQ40?"]
+output = "/app/output/query_02_output.json"
+keys = { answer = "str", citations = "list", confidence = "number" }
+
+# GPU self-test: --samples is the official mc3-corpus folder, with
+# sample-questions.json next to it. bench runs from the repo root.
+[gpu]
+ready_socket = "/tmp/provenance_rag.sock"
+ready_timeout = 600
+bench = ["python3", "-m", "provenance_rag", "bench", "--corpus", "{samples}",
+         "--questions", "{samples}/../sample-questions.json", "--backend", "transformers",
+         "--out-dir", "{reports}", "--name", "m3-gpu"]
+
+[[gpu.setup]]
+name = "index"
+args = ["python3", "/app/app.py", "--index", "{samples}"]
+timeout = 600
+
+[[gpu.case]]
+name = "query_01"
+args = ["python3", "/app/app.py", "--corpus", "{samples}", "--query-id", "query_01",
+        "--query", "Per the TQ40 datasheet, how hot may the junction get?"]
+output = "/app/output/query_01_output.json"
+keys = { answer = "str", citations = "list", confidence = "number" }

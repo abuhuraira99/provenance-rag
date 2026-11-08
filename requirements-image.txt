@@ -1,0 +1,38 @@
+# Extra packages for the container, installed with --no-deps into /opt/site (on PYTHONPATH)
+# so the ROCm torch / torchvision / numpy / pillow that ship in the base image are never replaced.
+# Exact pins, full dependency closure. Every entry has a cp314 manylinux x86_64, abi3 or pure wheel.
+# Resolved for: python 3.14, x86_64-manylinux_2_28, binary-only.
+#
+# model runtime
+transformers==5.22.2
+tokenizers==0.23.3
+safetensors==0.8.0
+huggingface-hub==2.4.0
+hf-xet==1.8.0
+regex==2026.11.7
+pyyaml==6.0.3
+packaging==26.3
+filelock==4.2.9
+fsspec==2026.9.0
+tqdm==4.70.1
+typing-extensions==4.16.0
+# huggingface-hub client dependencies (imported, never used for network at run time)
+httpx2==2.16.0
+httpcore2==2.16.0
+h11==0.16.0
+anyio==4.16.0
+idna==3.20
+truststore==0.10.5
+typer==0.28.0
+click==8.5.1
+rich==15.0.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+pygments==2.21.0
+shellingham==1.5.4
+annotated-doc==0.0.5
+# document parsers
+pymupdf==1.28.2
+pypdf==7.0.0
+openpyxl==3.1.5
+et-xmlfile==2.0.0

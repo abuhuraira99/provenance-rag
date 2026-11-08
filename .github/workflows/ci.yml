@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        deps: ["minimal", "parsers"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Tests (stdlib only)
+        if: matrix.deps == 'minimal'
+        run: uv run --python 3.14 --with pytest python -m pytest -q
+      - name: Tests (with document parsers)
+        if: matrix.deps == 'parsers'
+        run: uv run --python 3.14 --with pytest --with pymupdf==1.28.2 --with openpyxl==3.1.5 --with pypdf==7.0.0 python -m pytest -q

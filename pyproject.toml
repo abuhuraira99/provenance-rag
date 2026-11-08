@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "provenance-rag"
+version = "0.1.0"
+description = "Question answering over messy document folders with exact, necessity-tested file citations."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Abu Huraira" }]
+requires-python = ">=3.11"
+keywords = ["rag", "retrieval", "citations", "document-qa", "ocr", "qwen3-vl", "rocm"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.14",
+  "Operating System :: OS Independent",
+  "Topic :: Text Processing :: Indexing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+parsers = ["pymupdf>=1.26,<2", "openpyxl>=3.1"]
+gpu = ["transformers>=4.57", "safetensors", "tokenizers"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+provenance-rag = "provenance_rag.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/abuhuraira99/provenance-rag"
+
+[tool.setuptools.packages.find]
+include = ["provenance_rag*"]
+
+[tool.setuptools.package-data]
+"provenance_rag.studio" = ["static/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
